@@ -1,13 +1,12 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 const cors = require('cors');
-const controller = require('./controller.');
+require('dotenv').config();
+
+
 
 const app = express();
-app.use( bodyParser.json() );
-app.use( cors() )
 
 const {
     CONNECTION_STRING,
@@ -18,9 +17,17 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
 
+app.use( bodyParser.json() );
+app.use( cors() )
+
 
 //ENDPOINTS
-app.get(`/api/:shelfletter`, controller.getshelf)
+app.get(`/api/:shelf`, (req, res, next) => {
+    console.log("hit get shelf")
+    const { shelf } = req.query;
+
+    app.get('db').get_shelf([shelf]).then( shelfs => {res.status(200).send(shelfs);})
+})
 
 
 app.listen(SERVER_PORT, () => console.log(`listening on port: ${SERVER_PORT}`) )

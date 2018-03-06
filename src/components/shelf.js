@@ -4,6 +4,7 @@ import './comp.css';
 import logo from './download.png';
 import axios from 'axios';
 
+
 export default class Shelf extends  Component{
     constructor(){
         super()
@@ -15,16 +16,23 @@ export default class Shelf extends  Component{
 
 
     componentDidMount(){
-        axios.get(`/api/?shelfletter=${this.props.match.params.shelfletter}`).then(
+        axios.get(`http://localhost:3030/api/:?shelf=${this.props.match.params.shelfletter}`).then(
             res => {
-                this.setState({shelf: res.data})
+                
+                this.setState({shelf: res.data });
+
+                console.log(this.state.shelf)
             }
+            
         )
+        
     }
 
 
     render(){
-        var {shelfletter} = this.props.match.params
+        var {shelfletter} = this.props.match.params;
+        var {shelf} = this.state;
+
         return (
             <div>
 
@@ -41,7 +49,11 @@ export default class Shelf extends  Component{
                 </div>
 
                 <div className="body">
-
+                   
+                { shelf.length === 2 ?
+                        <div>{<Link to={`/bin/${shelfletter}/1`}><button className="bincontents"></button></Link>}
+                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> }
+                   
                     <Link to={`/bin/${shelfletter}/1`}><button className="bincontents"></button></Link>
 
                     <Link to={`/bin/${shelfletter}/2`}><button className="bincontents"></button></Link>
@@ -51,11 +63,14 @@ export default class Shelf extends  Component{
                     <Link to={`/bin/${shelfletter}/4`}><button className="bincontents"></button></Link>
 
                     <Link to={`/bin/${shelfletter}/5`}><button className="bincontents"></button></Link>
-
+                    { this.state.shelf[0] ?
+                        <div>{this.state.shelf[0].item } {this.state.shelf[0].price } 
+                        </div> : null}
                 </div>
                 
             </div>
         )
+
     }
 
 }
