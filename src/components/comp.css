@@ -1,0 +1,72 @@
+.homehead {
+    
+    width: 100%;
+    background-color: #ab2a19;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    font-family: bold,sans-serif;
+    color: white;
+
+}
+
+#homehead2{
+    width: 40%;
+}
+
+.head2{
+    display: flex;
+    flex-direction: row;
+}
+
+#shelfhead{
+    width: 100%;
+    background-color: #d34735;
+    height:40px;
+    justify-content: left;
+    font-size: 2.5rem;
+    padding: 46px;
+}
+
+.image{
+    position: relative;
+    height: 60px;
+    top: 12px;
+    
+}
+
+.headtext{
+    font-size: 30px;
+    font-family: bold,sans-serif;
+    color: white;
+}
+
+
+.body{
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.shelfButt{
+    width: 500px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-size: 30px;
+    background-color: #d34735;
+    cursor: pointer;
+    font-family: bold,sans-serif;
+    color: white;
+}
+
+.bincontents{
+    width: 500px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #ed6b5a;
+}
