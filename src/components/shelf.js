@@ -30,28 +30,26 @@ export default class Shelf extends  Component{
 
                 var shelfy = this.state.shelf;
 
-                for(var i in shelfy){
+                for(var i=0; i<shelfy.length; i++){
                     if(shelfy[i].bin === 1){
                         this.setState({bin1: [shelfy[i]]})
-                        return this.state.bin1;
+                        
                     }else if(shelfy[i].bin === 2){
                         this.setState({bin2: [shelfy[i]]})
-                        return this.state.bin2;
+                        
 
                     }else if(shelfy[i].bin === 3){
                         this.setState({bin3: [shelfy[i]]})
-                        return this.state.bin2;
+                        
                     
                     }else if(shelfy[i].bin === 4){
                         this.setState({bin4: [shelfy[i]]})
-                        return this.state.bin2;
+                       
                     
                     }else if(shelfy[i].bin === 5){
                         this.setState({bin5: [shelfy[i]]})
-                        return this.state.bin2;
                     
                     }
-                
                 
                 }
             }
@@ -105,20 +103,6 @@ export default class Shelf extends  Component{
                         </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
 
                         
-                   
-                    {/* <Link to={`/bin/${shelfletter}/1`}><button className="bincontents"></button></Link>
-
-                    <Link to={`/bin/${shelfletter}/2`}><button className="bincontents"></button></Link>
-
-                    <Link to={`/bin/${shelfletter}/3`}><button className="bincontents"></button></Link>
-
-                    <Link to={`/bin/${shelfletter}/4`}><button className="bincontents"></button></Link>
-
-                    <Link to={`/bin/${shelfletter}/5`}><button className="bincontents"></button></Link> */}
-                    
-                    { this.state.shelf[0] ?
-                        <div>{this.state.shelf[0].item } {this.state.shelf[0].price } 
-                        </div> : null}
                 </div>
                 
             </div>
