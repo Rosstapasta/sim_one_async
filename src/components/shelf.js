@@ -31,6 +31,7 @@ export default class Shelf extends  Component{
                 var shelfy = this.state.shelf;
 
                 for(var i=0; i<shelfy.length; i++){
+
                     if(shelfy[i].bin === 1){
                         this.setState({bin1: [shelfy[i]]})
                         
@@ -50,19 +51,15 @@ export default class Shelf extends  Component{
                         this.setState({bin5: [shelfy[i]]})
                     
                     }
-                
                 }
             }
         )
-        
-        
-        
     }
 
 
     render(){
+
         var {shelfletter} = this.props.match.params;
-        // var {shelf} = this.state;
 
         return (
             <div>
@@ -83,25 +80,24 @@ export default class Shelf extends  Component{
                 
 
                     { this.state.bin1[0] ?
-                        <div>{<Link to={`/bin/${shelfletter}/1`}><button className="bincontents"></button></Link>}
-                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
+                        <div>{<Link to={`/bin/${shelfletter}/1`}><button id="binfull" className="bincontents">Bin 1</button></Link>}
+                        </div> : <Link to={`/create/${shelfletter}/1`}><button id="inventory" className="shelfButt">+ Add inventory to bin</button></Link> } 
 
                     { this.state.bin2[0] ?
-                        <div>{<Link to={`/bin/${shelfletter}/2`}><button className="bincontents"></button></Link>}
-                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
+                        <div>{<Link to={`/bin/${shelfletter}/2`}><button id="binfull" className="bincontents">Bin 2</button></Link>}
+                        </div> : <Link to={`/create/${shelfletter}/2`}><button id="inventory" className="shelfButt">+ Add inventory to bin</button></Link> } 
 
                     { this.state.bin3[0] ?
-                        <div>{<Link to={`/bin/${shelfletter}/3`}><button className="bincontents"></button></Link>}
-                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
+                        <div>{<Link to={`/bin/${shelfletter}/3`}><button id="binfull" className="bincontents">Bin 3</button></Link>}
+                        </div> : <Link to={`/create/${shelfletter}/3`}><button id="inventory" className="shelfButt">+ Add inventory to bin</button></Link> } 
 
                     { this.state.bin4[0] ?
-                        <div>{<Link to={`/bin/${shelfletter}/4`}><button className="bincontents"></button></Link>}
-                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
+                        <div>{<Link to={`/bin/${shelfletter}/4`}><button id="binfull" className="bincontents">Bin 4</button></Link>}
+                        </div> : <Link to={`/create/${shelfletter}/4`}><button id="inventory" className="shelfButt">+ Add inventory to bin</button></Link> } 
 
                     { this.state.bin5[0] ?
-                        <div>{<Link to={`/bin/${shelfletter}/5`}><button className="bincontents"></button></Link>}
-                        </div> : <Link to='/create'><button className="shelfButt"></button></Link> } 
-
+                        <div>{<Link to={`/bin/${shelfletter}/5`}><button id="binfull" className="bincontents">Bin 5</button></Link>}
+                        </div> : <Link to={`/create/${shelfletter}/5`}><button id="inventory" className="shelfButt">+ Add inventory to bin</button></Link> } 
                         
                 </div>
                 

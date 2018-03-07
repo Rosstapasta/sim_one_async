@@ -29,6 +29,25 @@
     padding: 46px;
 }
 
+#shelfhead2{
+    width: 40%;
+    background-color: #d34735;
+    height:40px;
+    justify-content: left;
+    font-size: 2.5rem;
+    padding: 46px;
+    color: white;
+}
+
+#binhead{
+    width: 100%;
+    background-color: #ed6b5a;
+    height:40px;
+    justify-content: left;
+    font-size: 2.5rem;
+    padding: 46px;
+}
+
 .image{
     position: relative;
     height: 60px;
@@ -50,6 +69,15 @@
     flex-direction: column;
 }
 
+#createbody{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
 .shelfButt{
     width: 500px;
     height: 60px;
@@ -69,4 +97,105 @@
     border-radius: 3px;
     cursor: pointer;
     background-color: #ed6b5a;
+}
+
+#binfull{
+    color: white;
+    font-size: 30px;
+}
+
+#inventory{
+    background-color: #ffb8af;
+    color: white;
+    font-size: 30px;
+}
+
+.something{
+    color: white;
+}
+
+.createbutt{
+    align-items: center;
+    width: 525px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-size: 30px;
+    background-color: #40f99b;
+    cursor: pointer;
+    font-family: bold,sans-serif;
+    color: black;
+    font-style: bold;
+    position: relative;
+    
+}
+
+.createinput{
+    border: 1px solid #ab2a19;
+    border-radius: 3px;
+    padding: 12px;
+    /* min-width: 500px; */
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: 500px;
+   
+}
+
+.createtext{
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    position: relative;
+    left: -200px;
+    font-size: 30px;
+}
+
+.binbod{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.binplacehold{
+    width: 200px;
+    height: 800px;
+}
+
+.imgspot{
+    width: 240px;
+    height: 800px;
+}
+
+.therest{
+    top: 20px;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 20px;
+
+}
+
+.binbuttons{
+    width: 525px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.binbutt{
+    
+    background-color: #d8d8d8;
+    font-family: Open Sans,sans-serif;
+    width: 200px;
+    height: auto;
+    font-size: 30px;
+    border: none;
+    width: 200px;
+    border-radius: 3px;
+    padding: 10px 0;
+    cursor: pointer;
+    outline: none;
 }
