@@ -21,11 +21,10 @@ export default class Shelf extends  Component{
 
 
     componentDidMount(){
-        axios.get(`http://localhost:3030/api/:?shelf=${this.props.match.params.shelfletter}`).then(
+        axios.get(`http://localhost:3030/api/?shelf=${this.props.match.params.shelfletter}`).then(
             res => {
                 
                 this.setState({shelf: res.data });
-                console.log(this.state.shelf);
 
 
                 var shelfy = this.state.shelf;
@@ -52,6 +51,8 @@ export default class Shelf extends  Component{
                     
                     }
                 }
+                
+                console.log(this.state)
             }
         )
     }
