@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import logo from './download.png';
 import axios from 'axios';
 
@@ -13,7 +13,8 @@ export default class Bin extends  Component{
             bin: [],
             input1: '',
             input2: 0,
-            edit: false
+            edit: false,
+            redirect: false
 
         }
 
@@ -21,6 +22,7 @@ export default class Bin extends  Component{
         this.inputChange2 = this.inputChange2.bind(this);
         this.editToggle = this.editToggle.bind(this);
         this.updateBin = this.updateBin.bind(this);
+        this.deleteBin = this.deleteBin.bind(this);
     }
 
 
@@ -43,15 +45,15 @@ export default class Bin extends  Component{
         )
     }
 
-    
+
     updateBin(){
         axios.put(`http://localhost:3030/api/?shelf=${this.props.match.params.shelfletter}`, {
 
             bin: this.state.bin[0].bin,
             item: this.state.input1,
             price: this.state.input2
-
-        }).then( res => {
+    
+            }).then( res => {
 
             this.setState({shelf: res.data})
 
@@ -74,6 +76,13 @@ export default class Bin extends  Component{
 
 
 
+    deleteBin(){
+
+        var binnn = this.state.bin[0].bin;
+        console.log(binnn)
+        axios.delete(`http://localhost:3030/api/?shelf=${this.props.match.params.shelfletter}&bin=${binnn}`).then( res => this.setState({ redirect: true })  )
+    }
+
 
     inputChange1(val){
         this.setState({input1: val })
@@ -92,6 +101,14 @@ export default class Bin extends  Component{
     render(){
 
         const {edit} = this.state;
+
+        var letter = this.props.match.params.shelfletter;
+
+        if(this.state.redirect === true){
+
+           return <Redirect push to={`/shelf/${letter}`}/>
+        }
+
         return (
             <div>
 
@@ -116,7 +133,11 @@ export default class Bin extends  Component{
 
                         <div className="binplacehold"></div>
 
-                        <div className="imgspot"></div>
+                       
+                        <div className="imgspot">
+                            {/* image here */}
+                        </div>
+
 
                         <div className="therest">
 
@@ -132,12 +153,10 @@ export default class Bin extends  Component{
                             <div className="binbuttons">
 
                                     { edit  ? 
-
-                                   <div>{ <button onClick={() => this.updateBin()}>save</button> }</div> 
-
+                                    <div>{ <button onClick={() => this.updateBin()}>save</button> }</div> 
                                     : <button className="binbutt" onClick={() => this.editToggle()}>Edit</button> }
 
-                                    <button className="binbutt">Delete</button>
+                                    <button className="binbutt" onClick={() => this.deleteBin()}>Delete</button>
 
                             </div>
 

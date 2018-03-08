@@ -4,8 +4,6 @@ const massive = require('massive');
 const cors = require('cors');
 require('dotenv').config();
 
-
-
 const app = express();
 
 const {
@@ -34,13 +32,28 @@ app.put('/api/', (req, res, next) => {
     const {shelf} = req.query;
     const { bin, item, price } = req.body;
 
+   
+     
+    console.log(bin)
+
     app.get('db').update_bin(shelf, bin, item, price).then( shelfs => {res.status(200).send(shelfs)})
 })
 
-
 app.delete('/api/', (req, res, next) => {
+ console.log("hit delete endpoint")
+    const { shelf, bin } = req.query;
+    
+
+console.log(shelf, bin)
+    app.get('db').delete_bin( shelf, bin ).then( shelfs => {res.status(200).send(shelfs)})
+})
+
+app.post('/api/', (req, res, next) => {
+
     const { shelf } = req.query;
-    const { bin } = req.body;
+    const { bin, item, price } = req.body;
+
+    app.get('db').create_bin(shelf, bin, item, price).then( shelfs => {res.status(200).send(shelfs)})
 })
 
 app.listen(SERVER_PORT, () => console.log(`listening on port: ${SERVER_PORT}`) )
