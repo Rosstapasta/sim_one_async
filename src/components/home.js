@@ -17,19 +17,23 @@ export default class Home extends  Component{
                     <div className="body">
 
                         <Link to="/shelf/A">
-                            <button className="shelfButt">Shelf A</button>
+                            <button className="shelfButt">
+                            <p className="shelftext">Shelf A</p></button>
                         </Link>
 
                         <Link to="/shelf/B">
-                            <button className="shelfButt">Shelf B</button>
+                            <button className="shelfButt">
+                            <p className="shelftext">Shelf B</p></button>
                         </Link>
 
                         <Link to="/shelf/C">
-                            <button className="shelfButt">Shelf C</button>
+                            <button className="shelfButt">
+                            <p className="shelftext">Shelf C</p></button>
                         </Link>
 
                         <Link to="/shelf/D">
-                            <button className="shelfButt">Shelf D</button>
+                            <button className="shelfButt">
+                            <p className="shelftext">Shelf D</p></button>
                         </Link>
 
                     </div>

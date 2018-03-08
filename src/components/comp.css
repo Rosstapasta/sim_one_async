@@ -52,6 +52,7 @@
     position: relative;
     height: 60px;
     top: 12px;
+    right: 190px;
     
 }
 
@@ -59,6 +60,8 @@
     font-size: 30px;
     font-family: bold,sans-serif;
     color: white;
+    position: relative;
+    right: 170px;
 }
 
 
@@ -88,6 +91,12 @@
     cursor: pointer;
     font-family: bold,sans-serif;
     color: white;
+}
+
+.shelftext{
+    position: relative;
+    bottom: 18px;
+    right: 80px;
 }
 
 .bincontents{
@@ -151,6 +160,11 @@
     font-size: 30px;
 }
 
+#texttext{
+    left: -390px;
+    font-size: 20px;
+}
+
 .binbod{
     display: flex;
     flex-direction: row;
@@ -163,6 +177,8 @@
 }
 
 .imgspot{
+    position: relative;
+    top: 50px;
     width: 240px;
     height: 800px;
 }

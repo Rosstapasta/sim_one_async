@@ -105,6 +105,7 @@ export default class Bin extends  Component{
         if(this.state.redirect === true){
 
            return <Redirect push to={`/shelf/${letter}`}/>
+
         }
 
         return (
@@ -133,17 +134,17 @@ export default class Bin extends  Component{
 
                        
                         <div className="imgspot">
-                            {/* image here */}
+                            <img src="http://lorempixel.com/200/200/business/"/>
                         </div>
 
 
                         <div className="therest">
 
-                            <p className="createtext">Name</p>
+                            <p id="texttext" className="createtext">Name</p>
 
                             <input className="createinput" onChange={ (e) => this.inputChange1(e.target.value)} value={this.state.input1} disabled={ this.state.edit === false }></input>
 
-                            <p className="createtext">Price</p>
+                            <p id="texttext" className="createtext">Price</p>
 
                             <input className="createinput" onChange={ (e) => this.inputChange2(e.target.value)} value={this.state.input2} disabled={this.state.edit === false}></input>
 
