@@ -52,6 +52,7 @@ export default class Create extends  Component{
         console.log(this.props)
 
         return (
+            
             <div>
                     <div className="head2">
 

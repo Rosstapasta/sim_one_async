@@ -36,16 +36,13 @@ export default class Shelf extends  Component{
                         
                     }else if(shelfy[i].bin === 2){
                         this.setState({bin2: [shelfy[i]]})
-                        
 
                     }else if(shelfy[i].bin === 3){
                         this.setState({bin3: [shelfy[i]]})
                         
-                    
                     }else if(shelfy[i].bin === 4){
                         this.setState({bin4: [shelfy[i]]})
                        
-                    
                     }else if(shelfy[i].bin === 5){
                         this.setState({bin5: [shelfy[i]]})
                     

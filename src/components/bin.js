@@ -134,7 +134,7 @@ export default class Bin extends  Component{
 
                        
                         <div className="imgspot">
-                            <img src="http://lorempixel.com/200/200/business/"/>
+                            <img src="http://lorempixel.com/200/200/business/" alt="inventory"/>
                         </div>
 
 
@@ -146,6 +146,8 @@ export default class Bin extends  Component{
 
                             <p id="texttext" className="createtext">Price</p>
 
+
+                                                        {/* 26E */}
                             <input className="createinput" onChange={ (e) => this.inputChange2(e.target.value)} value={this.state.input2} disabled={this.state.edit === false}></input>
 
 
