@@ -30,8 +30,6 @@ export default class Create extends  Component{
 
         }).then( res => this.setState({ redirect: true })  )
 
-       
-
     }
 
     nameInput(val){

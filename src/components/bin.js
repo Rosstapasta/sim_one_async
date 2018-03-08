@@ -25,7 +25,6 @@ export default class Bin extends  Component{
         this.deleteBin = this.deleteBin.bind(this);
     }
 
-
     componentDidMount(){
         axios.get(`http://localhost:3030/api/?shelf=${this.props.match.params.shelfletter}`).then(
             res => {
@@ -73,7 +72,6 @@ export default class Bin extends  Component{
 
         })
     }
-
 
 
     deleteBin(){
@@ -153,7 +151,7 @@ export default class Bin extends  Component{
                             <div className="binbuttons">
 
                                     { edit  ? 
-                                    <div>{ <button onClick={() => this.updateBin()}>save</button> }</div> 
+                                    <div>{ <button className="savebut" onClick={() => this.updateBin()}>Save</button> }</div> 
                                     : <button className="binbutt" onClick={() => this.editToggle()}>Edit</button> }
 
                                     <button className="binbutt" onClick={() => this.deleteBin()}>Delete</button>

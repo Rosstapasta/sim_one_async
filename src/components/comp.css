@@ -199,3 +199,15 @@
     cursor: pointer;
     outline: none;
 }
+
+.savebut{
+    height: auto;
+    font-size: 30px;
+    border: none;
+    width: 200px;
+    border-radius: 3px;
+    padding: 10px 0;
+    cursor: pointer;
+    outline: none;
+    background-color: #40f99b;
+}

@@ -18,10 +18,7 @@ massive(CONNECTION_STRING).then(db => {
 app.use( bodyParser.json() );
 app.use( cors() )
 
-
-//ENDPOINTS
 app.get(`/api/`, (req, res, next) => {
-    console.log("hit get shelf")
     const { shelf } = req.query;
 
     app.get('db').get_shelf(shelf).then( shelfs => {res.status(200).send(shelfs);})
@@ -32,19 +29,12 @@ app.put('/api/', (req, res, next) => {
     const {shelf} = req.query;
     const { bin, item, price } = req.body;
 
-   
-     
-    console.log(bin)
-
     app.get('db').update_bin(shelf, bin, item, price).then( shelfs => {res.status(200).send(shelfs)})
 })
 
 app.delete('/api/', (req, res, next) => {
- console.log("hit delete endpoint")
+ 
     const { shelf, bin } = req.query;
-    
-
-console.log(shelf, bin)
     app.get('db').delete_bin( shelf, bin ).then( shelfs => {res.status(200).send(shelfs)})
 })
 
